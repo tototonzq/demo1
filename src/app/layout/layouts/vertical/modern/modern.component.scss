@@ -1,0 +1,48 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.text-gray-800 {
+  color: #333;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  transition: all 200ms ease-in-out;
+
+  &.sidebar-open {
+    margin-left: 0;
+  }
+
+  &.sidebar-closed {
+    margin-left: -18rem;
+  }
+}
+
+.sticky {
+  position: sticky;
+  z-index: 1;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.background-outlet {
+  background-color: #f0f2f5;
+}

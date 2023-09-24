@@ -1,0 +1,22 @@
+<div class="flex flex-row h-screen bg-white text-gray-800">
+  <div>
+    <p>Sidebar</p>
+  </div>
+
+  <main
+    class="main flex flex-col flex-grow transition-all duration-200 ease-in-out background-outlet"
+  >
+    <div class="sticky z-1">
+      <div class="px-3 pt-3">
+        <p>Navbar</p>
+      </div>
+    </div>
+    <div
+      class="mt-3 main flex flex-col flex-grow overflow-y-auto overflow-x-hidden relative"
+    >
+      <div class="px-3 pb-3">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </main>
+</div>
