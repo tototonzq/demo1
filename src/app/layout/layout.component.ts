@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-layout',
@@ -17,6 +17,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   /*                                 unsubscribe                                */
   /* -------------------------------------------------------------------------- */
   _destroy$ = new Subject<void>();
+  _layout$ = new BehaviorSubject<string>('EMPTY');
 
   /* -------------------------------------------------------------------------- */
   /*                                  selector                                  */
@@ -28,6 +29,7 @@ export class LayoutComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.route.data.subscribe((data) => {
       console.log(data);
+      this._layout$.next(data['layout']);
     });
   }
 
